@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxford Institute of Languages - Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hamburger-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: #333;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-gray-50 pt-16">
+    <nav class="bg-white shadow-md p-4 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-800">Oxford Institute</a>
+            <div class="md:hidden">
+                <button id="hamburger" class="hamburger-menu focus:outline-none">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul id="nav-links" class="hidden md:flex space-x-6 text-lg font-medium">
+                <li><a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a></li>
+                <li><a href="courses.html" class="text-gray-700 hover:text-blue-600">Courses</a></li>
+                <li><a href="register.html" class="text-gray-700 hover:text-blue-600">Register</a></li>
+                <li><a href="test.html" class="text-gray-700 hover:text-blue-600">Test Your Level</a></li>
+                
+            </ul>
+        </div>
+        <div id="mobile-nav-menu" class="nav-menu md:hidden bg-white mt-2 shadow-lg">
+            <ul class="flex flex-col items-center py-4 space-y-2">
+                <li><a href="index.html" class="block text-gray-700 hover:text-blue-600 py-2">Home</a></li>
+                <li><a href="courses.html" class="block text-gray-700 hover:text-blue-600 py-2">Courses</a></li>
+                <li><a href="register.html" class="block text-gray-700 hover:text-blue-600 py-2">Register</a></li>
+                <li><a href="test.html" class="block text-gray-700 hover:text-blue-600 py-2">Test Your Level</a></li>
+                <li><a href="admin.html" class="block text-gray-700 hover:text-blue-600 py-2">Admin</a></li>
+                <li><a href="attendance.html" class="block text-gray-700 hover:text-blue-600 py-2">Attendance</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-gray-800 text-center mb-12">Register for a Course</h1>
+            <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-xl p-8">
+                <form id="registrationForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="col-span-1">
+                        <label for="firstName" class="block text-gray-700 text-sm font-bold mb-2">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="col-span-1">
+                        <label for="middleName" class="block text-gray-700 text-sm font-bold mb-2">Middle Name:</label>
+                        <input type="text" id="middleName" name="middleName" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="col-span-1">
+                        <label for="lastName" class="block text-gray-700 text-sm font-bold mb-2">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="col-span-1">
+                        <label for="age" class="block text-gray-700 text-sm font-bold mb-2">Age:</label>
+                        <input type="number" id="age" name="age" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required min="10" max="99">
+                    </div>
+                    <div class="col-span-2">
+                        <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Address:</label>
+                        <input type="text" id="address" name="address" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="col-span-1">
+                        <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required pattern="^\+?[0-9]{7,15}$" placeholder="+25261xxxxxxx">
+                    </div>
+                    <div class="col-span-1">
+                        <label for="gender" class="block text-gray-700 text-sm font-bold mb-2">Gender:</label>
+                        <select id="gender" name="gender" class="shadow border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="col-span-2">
+                        <label for="courseLevel" class="block text-gray-700 text-sm font-bold mb-2">Choose Course Level:</label>
+                        <select id="courseLevel" name="courseLevel" class="shadow border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                            <option value="">Select a Level</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Elementary">Elementary</option>
+                            <option value="Pre-Intermediate">Pre-Intermediate</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="col-span-2 flex justify-center mt-6">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                            Submit Registration
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-12">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Available Classes Status</h2>
+                    <div id="classAvailability" class="p-6 rounded-lg shadow-md bg-white">
+                        <p class="text-center text-gray-600">Select a course level above to check availability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <footer class="bg-gray-800 text-white py-10">
+        <div
+            class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-6 md:mb-0">
+                <h4 class="text-2xl font-bold mb-2">Oxford Institute of Languages</h4>
+                <p class="text-gray-400">Mastering English, Empowering Futures.</p>
+            </div>
+            <div class="mb-6 md:mb-0">
+                <h4 class="text-xl font-semibold mb-3">Contact Us</h4>
+                <p class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i>Mogadishu, Somalia</p>
+                <p class="text-gray-400"><i class="fas fa-phone mr-2"></i>+252 61 7619131</p>
+                <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i>ismaaciilhiiraayi@gmail.com</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold mb-3">Follow Us</h4>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/252617619131
+" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.tiktok.com/@www.oxford12?is_from_webapp=1&sender_device=pc" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-tiktok"></i></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-700 text-center text-gray-500">
+            &copy; 2025 Oxford Institute of Languages. All rights reserved.
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
